@@ -7,7 +7,9 @@ const ImageGrid = props => {
 
   return <div className='image-grid'>
     { docs && docs.map(doc => (
-      <div className='image-wrap' key={doc.id}>
+      <div className='image-wrap' key={doc.id}
+        onClick={()=> props.setImage(doc.url)}
+      >
         <img src={doc.url} alt="uploaded pic"/>
       </div>
     ))}

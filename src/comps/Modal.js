@@ -1,8 +1,15 @@
 import React from 'react';
 
 const Modal = props => {
-  return <div className='backdrop'>
-    <img src="" alt="Enlarged picture"/>
+
+  const handleClick = e => {
+    if (e.target.classList.contains('backdrop')) {
+      props.setImage(null);
+    }
+  }
+
+  return <div className='backdrop' onClick={handleClick}>
+    <img src={props.image} alt="Enlarged picture"/>
   </div>
 }
 
